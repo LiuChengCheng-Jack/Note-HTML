@@ -1,0 +1,7 @@
+1.通过style属性进行访问  background-color 对应 style.backgroundColor
+
+2. 元素大小 （1）（2）属性只读，每次访问要重新获取
+  （1）偏移量 offsetHeight offsetWidth (均不包括外边距)
+      offsetParent 获取父元素  offsetLeft offsetTop(与父元素的距离)
+  （2）客户区大小  clientWidth clientHeight (内容加内边距)
+  （3）滚动大小 scrollWidth scrollHeight scrollLeft scrollTop

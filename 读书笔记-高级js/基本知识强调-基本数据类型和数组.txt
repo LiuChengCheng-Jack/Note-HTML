@@ -1,0 +1,60 @@
+基本类型：
+
+1. Number 
+ 
+类型转换: Number() parseInt() parseFloat()
+前两者针对所有数据类型，后两者适用于字符串   Number("");//0 
+
+转化字符串时常用parseInt()  parseInt("1234blue");//1234  parseInt("") //NaN    Number("22.6");//22
+可以在第二个参数上指定参数。 parseInt("10",16);//16
+
+parseFloat() 只能处理十进制值。十六进制格式的字符串则会被转换为0
+
+2.String 字符串是不变的
+
+toString() null,undefined没有这个方法。 但数值的话可以指定基数  var num=10; num.toString(2);
+String() 实用性较强，null,undefined可以使用
+
+3.Object类型
+
+var o=new Object();
+hasOwnProperty("name");
+
+引用类型
+
+1.Array类型
+
+转换方法： toString() 返回由数组中每个值的字符串形式拼接而成的一个以逗号分隔的字符串 valueOf()
+      color.join(",") colors.join("||") 返回值为一个字符串
+
+栈方法：push() 返回值为数组的长度 pop() 返回值为出栈的值
+
+队列方法 shift() 取得数组第一个值，返回值为arr[0]  push（）返回值为数组的长度
+
+重排序方法：function com(){}  arr.sort(com);可以为排序指定比较函数 
+            reverse()  反转数组项顺序
+
+操作方法: concat(); 会返回一个新的数组
+        slice(int index,int endIndex);//返回值为一个新数组
+        splice(int index,int deleteLength,T addElement,T t2);//增删改 返回值为删除元素的数组，有可能为[]
+
+位置方法 indexOf() lastIndexOf()
+
+迭代方法：var number=[1,2,3,4,5,6,7]; number.every(function(item,index,array){});其他函数与第一个函数的参数类似 some() 与every()两者的返回值是一个boolean值          filter()将满足条件的过滤出来 map()对原始数组进行操作并返回更改后的数组 
+         number.foreach()最常用，无返回值function(item,index,array)
+
+         注意Jquery的参数结构有些不同
+
+包装类：String Number Boolen
+实际上，每当读取一个基本数据类型的值的时候，后台会创建一个相应的基本包装类的对象
+
+使用new 调用基本包装类的构造函数，与直接调用同名的转型函数是不一样的
+
+
+Number: toFixed()方法，会按照指定的小数位返回数值的字符串表示
+
+String: 字符方法 charAt() charCodeAt()
+        字符串操作函数: concat() 不会更改原字符串的值，返回一个新的字符串
+
+        slice() 和substring(int index,int endIndex) 参数与相似 substr(int index,int length)
+

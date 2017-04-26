@@ -1,0 +1,11 @@
+1.XDM跨文档传送消息 核心 postMessage() 向另一个地方传递消息(包含在当前页面中的<iframe>元素，或者由当前页面弹出的窗口）
+
+2.原生拖拽
+
+3.媒体元素<audio src=""></> <video src=""></>
+  并非所有的浏览器都支持所有媒体格式，所以可以指定多个不同的媒体来源  <video> <source=""><source=""> Video player no find</>
+  
+ 一些详细的属性和事件  play() 和pause()方法  canPlayType()
+
+4.历史状态管理 history对象
+

@@ -1,0 +1,69 @@
+1.跨浏览器的事件处理程序
+
+addHandler: function(element, type, handler){
+        if (element.addEventListener){//DOM2
+            element.addEventListener(type, handler, false);
+        } else if (element.attachEvent){//IE
+            element.attachEvent("on" + type, handler);
+        } else {//DOM0
+            element["on" + type] = handler;
+        }
+    }
+
+
+2.跨浏览器的事件对象 将DOM和IE中的Event进行了整合
+详见EventUtil.js
+
+键盘的组合键
+
+
+详细：
+1.事件流
+ （1）事件冒泡（2）事件捕获
+ （3） DOM事件流 三个阶段：事件捕获阶段 处于目标阶段 事件冒泡阶段
+   
+2. 事件处理程序
+（1）Dom0级数据处理程序
+    var btn=document.getElementById(""); btn.onclick=function(){};
+ (2) Dom2级数据处理程序
+   addEventListener() removeEventListener()//移除的函数不能为匿名函数
+   
+  btn.addEventListener("click",function(){},false);//false代表事件会在冒泡阶段被触发
+
+  IE事件处理程序 attachEvent() detachEvent()
+
+(3)跨浏览器的事件处理程序
+ 
+var EventUtil={
+   addEvent:function(element,type,handler){
+         if(element.addEventListener){
+      }
+  },
+    removeEvent:function(element,type,handler){
+ 
+         
+   }
+};
+
+3. 事件对象 里面包含一些属性和一些事件操作函数
+ IE中为window.event 
+
+return event?event:window.event;
+
+事件操作函数
+e.preventDefault()
+e.stopPropgation()等
+
+4. 事件类型
+ UI事件：load,resize,ubload,scroll
+
+
+
+
+
+
+
+
+
+
+

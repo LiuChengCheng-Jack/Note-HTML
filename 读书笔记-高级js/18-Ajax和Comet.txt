@@ -1,0 +1,60 @@
+1.XMLHttpRequest() 构造函数
+
+var xhr=new XMLHttpRequest(); var xhr=new creatXHR();
+
+xhr.open("get/post",url,false) false代表同步，true代表异步
+xhr.send(null);//send函数必须要有参数，不发送内容也要为null
+
+回应 status(200为正常状态) responeText responeXML（返回非XML数据，为null） statusText   xhr.status
+
+XHR对象的readyState属性，每次属性值更改，会触发readystatechange事件
+
+xhr.onreadystatechange=function(){
+   if(xhr.readyState==4)//4代表接收到全部响应数据
+     {}
+};
+
+xhr.abort();异步请求的终止
+
+
+2.http头部 setRequestHeader();//一般使用自定义的头部字段名称 getResponetHeader()
+
+  get请求：注意查询字符串的格式是否有问题
+  post请求：注意表单数据的序列化,同时要设置头部
+
+二：XMLHttpReques2级
+
+1. FormData 实现表单数据的序列化 var data=new FormData(document.forms[0]); xhr.send(data); IE有可能不支持
+
+2.超时设定 timeout(IE中有效) ontimeout=function(){}; 检查status的代码被try-catch包围
+
+3. overrideMimetype() 方法能保证把响应当做xml而非纯文本对待
+
+三。进度事件
+ 1. load事件在接收到完整的响应数据时触发 xhr.onload=function(){}
+ 2. progress事件 在接受响应期间持续不断的触发 利用此事件可以做一个进度条 利用三个属性值进行计算进度
+
+
+四。CORS跨域资源共享
+
+1. IE的实现 XDR XDomainRequest() 所有的XDR均是异步的
+2.其他浏览器的支持：url使用绝对路径即可 
+ 一般本地资源使用相对路径，远程资源使用绝对路径
+
+3.跨浏览器的CORS
+
+
+
+五：其他 
+Comet  Web Sockets
+
+
+
+
+
+
+
+
+
+
+
